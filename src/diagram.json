@@ -1,0 +1,64 @@
+{
+  "version": 1,
+  "author": "ESP32 Multi-Dustbin",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": -4.76, "attrs": {} },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "ultra1",
+      "top": -161.7,
+      "left": -378.5,
+      "attrs": { "distance": "25" }
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "ultra2",
+      "top": -161.7,
+      "left": -167.3,
+      "attrs": { "distance": "9" }
+    },
+    {
+      "type": "wokwi-lcd2004",
+      "id": "lcd1",
+      "top": -195.2,
+      "left": 236,
+      "attrs": { "pins": "i2c", "background": "black", "color": "white" }
+    },
+    { "type": "wokwi-servo", "id": "servo1", "top": 60, "left": 450, "attrs": {} },
+    {
+      "type": "wokwi-text",
+      "id": "label1",
+      "top": -192,
+      "left": -364,
+      "attrs": { "text": "Object Detect (Lid)" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "label2",
+      "top": -192,
+      "left": -172,
+      "attrs": { "text": "Fill Level" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "ultra1:VCC", "esp:5V", "red", [ "v268.8", "h297.6", "v28.8" ] ],
+    [ "ultra1:GND", "esp:GND.1", "black", [ "v240", "h286.65" ] ],
+    [ "ultra1:TRIG", "esp:13", "yellow", [ "v259.2", "h306.65" ] ],
+    [ "ultra1:ECHO", "esp:14", "yellow", [ "v249.6", "h277.6", "v-48" ] ],
+    [ "ultra2:VCC", "esp:5V", "red", [ "v268.8", "h86.4", "v28.8" ] ],
+    [ "ultra2:GND", "esp:GND.1", "black", [ "v240", "h75.45" ] ],
+    [ "ultra2:TRIG", "esp:18", "orange", [ "v57.6", "h230", "v115.2" ] ],
+    [ "ultra2:ECHO", "esp:19", "orange", [ "v38.4", "h229.6", "v124.8" ] ],
+    [ "servo1:GND", "esp:GND.2", "black", [ "h100" ] ],
+    [ "servo1:V+", "esp:5V", "red", [ "h80" ] ],
+    [ "servo1:PWM", "esp:27", "green", [ "h60" ] ],
+    [ "lcd1:VCC", "esp:5V", "red", [ "h-67.2", "v384.1", "h-192", "v-28.8" ] ],
+    [ "lcd1:GND", "esp:GND.2", "black", [ "h-144", "v201.6" ] ],
+    [ "lcd1:SDA", "esp:21", "green", [ "h-134.4", "v230.6" ] ],
+    [ "lcd1:SCL", "esp:22", "green", [ "h-124.8", "v182.7" ] ]
+  ],
+  "dependencies": {}
+}
