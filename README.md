@@ -355,7 +355,7 @@ See the **LICENSE** file for more information.
 
 ⭐ If you found this project useful, consider giving it a **Star ⭐** on GitHub!
 
-Made with ❤️ by **Shamma Shirin M A and Team**
+Made with ❤️ by **Madeeha Mohammed Mubeen and Team**
 
 </p>
 ````
