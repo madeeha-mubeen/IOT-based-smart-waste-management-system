@@ -1,4 +1,4 @@
-
+.
 # ♻️ IoT-Based Smart Waste Management System
 
 <p align="center">
